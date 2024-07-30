@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title> login form </title>
+    
+    <style>
+        .hidden{
+            display: none;
+        }
+    </style>
+    </head>
+    <body style="background-color: blueviolet;">
+        <div id="form-section">
+            <h2> LOGIN FORM</h2>
+            <form id="login-form">
+                <label for="name"> USERNAME:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="password"> PASSWORD:</label>
+                <input type="password" id="password" name="password" required><br>
+                <button type="submit"> SUBMIT</button>
+            </form>
+        </div>
+        
+        <div id="display-sec" class="hidden">
+            <h2> SUCCESFULLY LOGIN </h2>
+            <p id="display-name"></p>
+            <P id="display-password"></P>
+        </div>
+        <script>
+            document.getElementById('login-form').addEventListener('submit',function(event){
+                event.preventDefault();
+                var name=document.getElementById('name').value;
+                var password=document.getElementById('password').value;
+
+                document.getElementById('display-name').textContent='name'+name;
+                document.getElementById('display-password').textContent='password'+password;
+                document.getElementById('form-section').classList.add('hidden');
+                document.getElementById('display-sec').classList.remove('hidden');
+            });
+
+        </script>    
+
+</html>
